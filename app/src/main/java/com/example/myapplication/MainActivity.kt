@@ -1,14 +1,19 @@
 package com.example.navbartest
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.SearchView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +47,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+
 
     }
 
