@@ -37,6 +37,9 @@ android {
 
 dependencies {
 
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+    implementation("io.github.sceneview:arsceneview:2.2.1")
+    implementation("io.github.sceneview:sceneview:2.2.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

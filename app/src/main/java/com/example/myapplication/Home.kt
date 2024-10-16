@@ -1,5 +1,6 @@
 package com.example.navbartest
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SearchView
+import com.example.myapplication.Renderer
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,6 +55,10 @@ class Home : Fragment() {
         val adapter = activity?.let { ArrayAdapter<String>(it.applicationContext, android.R.layout.simple_list_item_1, itemList) }
         listView.adapter = adapter
 
+        listView.setOnItemClickListener { parent, view, position, id ->
+            val intent = Intent(activity, Renderer::class.java)
+            startActivity(intent)
+        }
         return view
     }
 
