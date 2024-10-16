@@ -31,13 +31,14 @@ class Home : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-
-
     }
 
     private val itemList = arrayListOf(
         "Train Station A", "Train Station B", "Central Station", "East Terminal", "West Station", "North Station"
     )
+
+    lateinit var searchView: SearchView
+    lateinit var listView: ListView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,22 +47,11 @@ class Home : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val searchView = view.findViewById<SearchView>(R.id.search_view)
-        val listView = view.findViewById<ListView>(R.id.list_view)
-//
-//        val adapter = ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, )
-//        listView.adapter = adapter
-//
-//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                adapter.filter.filter(newText)
-//                return false
-//            }
-//        })
+        searchView = view.findViewById<SearchView>(R.id.search_view)
+        listView = view.findViewById<ListView>(R.id.list_view)
+
+        val adapter = activity?.let { ArrayAdapter<String>(it.applicationContext, android.R.layout.simple_list_item_1, itemList) }
+        listView.adapter = adapter
 
         return view
     }
